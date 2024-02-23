@@ -16,12 +16,13 @@
     --color-white-70: rgba(255,255,255,70%);
     --color-white-50: rgba(255,255,255,50%);
     --color-white-20: rgba(255,255,255,20%);
-    --color-green-100: rgba(1 231 105);
+    --color-green-100: rgb(1, 231, 105);
     --color-green-90: rgba(1, 231, 105, 90%);
     --color-green-80: rgba(1, 231, 105, 80%);
     --color-green-60: rgba(1, 231, 105, 60%);
     --color-green-10: rgba(1, 231, 105, 10%);
     --color-rosa-100: rgba(236, 83, 160);
+    --color-rosa-60: rgba(236, 83, 160, 60%);
     --color-rosa-30: rgba(236, 83, 160, 30%);
 }
 html{
@@ -285,25 +286,174 @@ main section.tecnologias article picture img{
 main section.proyectos{
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 48px;
-    width: calc(100% - 30px);
+    width: 100%;
     padding: 24px 15px;
     height: auto;
-    border: 3px solid var(--color-green-10);
-    transition: background-color .3s ease-out,box-shadow .3s ease-out;
 }
 main section.proyectos h2{
-    margin-top: 32px;
-    padding: 0 24px;
+    width: max-content;
+    margin: 32px 0;
+    padding: 0 16px;
     font-family: "Monserrat", monospace;
     font-weight: 700;
     font-style: italic;
     letter-spacing: 3px;
-    font-size: 2rem;
-    text-align: left;
-    border-bottom: 2px solid var(--color-green-60);
+    font-size: 4rem;
+    border-bottom: 2px solid var(--color-green-100);
     text-wrap: balance;
     color: var(--color-white-90);   
+}
+main section.proyectos article.proyecto{
+    width: 100%;
+    margin: 24px auto;
+    padding: 32px 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--color-green-80);
+    transition: background-color .3s ease-out
+}
+main section.proyectos article.proyecto:hover{
+    background-color: var(--color-black-70);
+}
+main section.proyectos article.proyecto div.left{
+    width: 30%;
+    height: 100%;
+}
+main section.proyectos article.proyecto div.left picture.proyecto_imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 12px;
+    border: 2px solid var(--color-green-100);  
+    border-radius: 12px;
+    overflow: hidden;       
+    transition: background-color .3s ease-out, filter .3s ease-out, scale.3s ease-out;
+}
+main section.proyectos article.proyecto div.left picture.proyecto_imagen:hover{
+    background-color: var(--color-black-90);
+    box-shadow: 2px 2px 20px var(--color-green-60);
+    overflow: hidden;
+    scale: 1.02;
+}
+main section.proyectos article.proyecto div.left img{
+    width: 140%;
+    transition: width .3s ease-out;
+}
+main section.proyectos article.proyecto div.left picture.proyecto_imagen:hover img{
+    width: 200%;
+}
+main section.proyectos article.proyecto div.left div.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+main section.proyectos article.proyecto div.left div.buttons button.siguiente{
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform.3s ease-out, scale .3s ease-out;
+}
+main section.proyectos article.proyecto div.left div.buttons button.anterior{
+    width: 54px;
+    height: 54px;
+    transform: rotateY(180deg);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform.3s ease-out, scale .3s ease-out;
+}
+main section.proyectos article.proyecto div.left div.buttons button.siguiente:hover{
+    scale: 1.1;
+    transform: translate(4px);
+}
+main section.proyectos article.proyecto div.left div.buttons button.anterior:hover{
+    scale: 1.1;
+    transform: rotateY(180deg) translate(4px);
+}
+main section.proyectos article.proyecto div.left div.buttons button.siguiente img,
+main section.proyectos article.proyecto div.left div.buttons button.anterior img{
+    width: 100%;
+}
+main section.proyectos article.proyecto div.left div.buttons a{
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+}
+main section.proyectos article.proyecto div.left div.buttons a img{
+    width: 100%;
+    transition: filter .3s ease-out ;
+}
+main section.proyectos article.proyecto div.left a:hover img{
+    filter: drop-shadow(0 1px 1px var(--color-rosa-60));
+
+}
+
+main section.proyectos article.proyecto div.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 56%;
+}
+main section.proyectos article.proyecto div.right h3{
+    margin-bottom: 12px;
+    padding: 0 12px;
+    font-family: "Monserrat", monospace;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--color-green-60);
+    text-wrap: balance;
+    color: var(--color-white-90);
+}
+main section.proyectos article.proyecto div.right p{
+    width: 95%;
+    margin: 0 2%;
+    font-size: 1rem;
+    text-wrap: pretty;
+    color: var(--color-white-70);
+    margin-bottom: 24px;
+}
+main section.proyectos article.proyecto div.right div.tecnologiasUsadas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+    border-top: 2px solid var(--color-green-60);
+    border-bottom: 2px solid var(--color-green-60);
+}
+main section.proyectos article.proyecto div.right div.tecnologiasUsadas picture{
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 2px solid var(--color-green-10);
+    transition: box-shadow .3s ease-out;
+}
+main section.proyectos article.proyecto div.right div.tecnologiasUsadas picture:hover{
+    box-shadow: 0px 0px 10px var(--color-rosa-100);
+}
+main section.proyectos article.proyecto div.right div.tecnologiasUsadas picture img{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+main section.proyectos article.proyecto div.right div.tecnologiasUsadas picture h4{
+    color: var(--color-white-70);
+    line-height: 24px;
+    font-size: .6rem;
+    cursor: default;
 }
 @media (width < 800px) {
     header .nav_horizontal{
@@ -319,6 +469,36 @@ main section.proyectos h2{
     }
     main section.presentacion div.presentacion_inicio div.presentacion_nombre{
         margin: 24px 0;
+    }
+    main section.proyectos h2{
+        font-size: 2rem;
+        margin: 12px 0;
+    }
+    main section.proyectos article.proyecto{
+        flex-direction: column-reverse;
+        padding: 12px;
+    }
+    main section.proyectos article.proyecto div.right{
+        width: 90%;
+        margin: 0 5% 20px;
+    }
+    main section.proyectos article.proyecto div.left{
+        width: 90%;
+        margin: 0 5%;
+    }
+    main section.proyectos article.proyecto div.left picture.proyecto_imagen{
+        width: 80%;
+        margin: 0 10%;
+    }
+    main section.proyectos article.proyecto div.left img{
+        width: 80%;
+    }
+    main section.proyectos article.proyecto div.left picture.proyecto_imagen:hover img{
+        width: 100%;
+    }
+    main section.proyectos article.proyecto div.left div.buttons{
+        justify-content: center;
+        gap: 0 20px;
     }
 }
 @media (width < 500px) {
