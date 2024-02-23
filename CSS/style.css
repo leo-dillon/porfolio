@@ -10,6 +10,7 @@
     --color-black-100: rgba(0,0,0);
     --color-black-90: rgba(0,0,0,90%);
     --color-black-70: rgba(0,0,0,70%);
+    --color-black-40: rgba(0,0,0,40%);
     --color-white-100: rgba(255,255,255);
     --color-white-90: rgba(255,255,255,90%);
     --color-white-70: rgba(255,255,255,70%);
@@ -20,13 +21,14 @@
     --color-green-80: rgba(1, 231, 105, 80%);
     --color-green-60: rgba(1, 231, 105, 60%);
     --color-green-10: rgba(1, 231, 105, 10%);
+    --color-rosa-100: rgba(236, 83, 160);
+    --color-rosa-30: rgba(236, 83, 160, 30%);
 }
 html{
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth ;
 }
 body{
-    height: 3000px;
     background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(./../IMG/fondo.jpg) fixed repeat;
     background-size: 2000px;
     animation: movimiento 30s 0s infinite linear;
@@ -34,6 +36,15 @@ body{
 p{
     font-family: 'Anta', 'arial';
 }
+.presentacion_quienSoy:hover,
+.tecnologias:hover{
+    background-color: var(--color-black-70);
+    box-shadow: 0px 0px 10px var(--color-rosa-100);
+}
+
+
+
+
 header{
     height: 60px;
     width: 100%;
@@ -78,7 +89,7 @@ header .nav_horizontal ul li a:hover,
 header.active:hover .nav_horizontal ul li a:hover{
     scale: 1.2;
     opacity: 1;
-    text-decoration: underline 2px var(--color-white-70);
+    text-decoration: underline 2px var(--color-green-80);
     font-style: normal;
     transform: translateY(3px);
     transition:background-color .3s ease-out, scale .1s ease-out, transform .2s ease-out;
@@ -93,6 +104,7 @@ header.active .nav_horizontal ul li a{
 }
 header.active:hover{
     opacity: 1;
+    background-color: var(--color-black-90);
     transform: translateY(0px);
 }
 header.active:hover .nav_horizontal ul li a{
@@ -110,8 +122,15 @@ main{
     max-width: 1200px;
     width: 100%;
     padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* main section.presentacion */
+main section.presentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
 main section.presentacion div.presentacion_inicio{
     height: 500px;
     margin-bottom: 100px;
@@ -125,6 +144,8 @@ main section.presentacion div.presentacion_inicio div.presentacion_nombre{
     align-items: start;
 }
 main section.presentacion div.presentacion_inicio div.presentacion_nombre p{
+    position: relative;
+    right: 42px;
     font-size: 1.3rem;
     color: var(--color-green-90);
 }
@@ -148,6 +169,7 @@ main section.presentacion div.presentacion_inicio div.presentacion_nombre h1 spa
 }
 main section.presentacion picture{
     display: block;
+    min-width: 200px;
     width: 300px;
     padding: 6px;
     background-color: var(--color-white-20);
@@ -166,6 +188,7 @@ main section.presentacion div.presentacion_quienSoy{
     padding: 24px 15px;
     height: auto;
     border: 3px solid var(--color-green-10);
+    transition: background-color .3s ease-out,box-shadow .3s ease-out;
 }
 main section.presentacion div.presentacion_quienSoy h2{
     margin-top: 4px;
@@ -178,6 +201,7 @@ main section.presentacion div.presentacion_quienSoy h2{
     text-align: left;
     text-wrap: balance;
     color: var(--color-white-90);
+    border-bottom: 2px solid var(--color-green-60);
 }
 main section.presentacion div.presentacion_quienSoy h2 span{
     font-family: "Monserrat", monospace;
@@ -187,10 +211,11 @@ main section.presentacion div.presentacion_quienSoy h2 span{
     font-size: 2rem;
     color: var(--color-green-100);
 }
-main section.presentacion div.presentacion_quienSoy p{    width: 90%;
-    margin: 24px 5% 12px;
-    padding: 8px 12px;
-    border-left: 2px solid var(--color-green-10);
+main section.presentacion div.presentacion_quienSoy p{    
+    width: 90%;
+    margin: 24px 6% 12px 4%;
+    padding: 24px 12px;
+    border-left: 2px solid var(--color-green-60);
     font-size: 1.3rem;
     color: var(--color-white-70);
 }
@@ -198,10 +223,102 @@ main section.presentacion div.presentacion_quienSoy p span{
     color: var(--color-green-100);
     font-size: 1.5rem;
 }
-@media (width < 770px) {
+main section.tecnologias{
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    width: calc(100% - 30px);
+    padding: 24px 15px;
+    height: auto;
+    border: 3px solid var(--color-green-10);
+    transition: background-color .3s ease-out,box-shadow .3s ease-out;
+}
+main section.tecnologias h2{
+    margin: 4px 0 12px 12px;
+    font-family: "Monserrat", monospace;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--color-green-60);
+    text-wrap: balance;
+    color: var(--color-white-90);
+}
+main section.tecnologias h2 span{
+    font-family: "Monserrat", monospace;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    color: var(--color-green-100);
+}
+main section.tecnologias article{
+    width: 80%;
+    margin: 32px 10%;
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+main section.tecnologias article picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--color-green-100);  
+    filter: grayscale(80%);
+    transition: background-color .3s ease-out, filter .3s ease-out, scale.3s ease-out;
+}
+main section.tecnologias article picture:hover{
+    background-color: var(--color-black-90);
+    filter: grayscale(20%);
+    box-shadow: 2px 2px 20px var(--color-green-60);
+    scale: 1.1;
+}
+main section.tecnologias article picture img{
+    width: 52px;
+}
+main section.proyectos{
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    width: calc(100% - 30px);
+    padding: 24px 15px;
+    height: auto;
+    border: 3px solid var(--color-green-10);
+    transition: background-color .3s ease-out,box-shadow .3s ease-out;
+}
+main section.proyectos h2{
+    margin-top: 32px;
+    padding: 0 24px;
+    font-family: "Monserrat", monospace;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--color-green-60);
+    text-wrap: balance;
+    color: var(--color-white-90);   
+}
+@media (width < 800px) {
     header .nav_horizontal{
         min-width: auto;
         width: 100%;
+    }
+    main section.presentacion div.presentacion_inicio{
+        height: auto;
+        flex-direction: column;
+    }
+    main section.presentacion div.presentacion_inicio div.presentacion_nombre p{
+        right: 0;
+    }
+    main section.presentacion div.presentacion_inicio div.presentacion_nombre{
+        margin: 24px 0;
     }
 }
 @media (width < 500px) {
@@ -267,7 +384,46 @@ main section.presentacion div.presentacion_quienSoy p span{
         letter-spacing: 3px;
         color: var(--color-white-100);
     }
-    
+    main{
+        padding: 12px;
+    }
+    main section.presentacion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main section.presentacion div.presentacion_inicio{
+        margin-bottom: 24px;
+    }
+    main section.presentacion div.presentacion_inicio div.presentacion_nombre h1 span{
+        margin: 4px 0 ;
+        width: auto;
+        font-size: 2rem;
+    }
+    main section.presentacion picture{
+        min-width: none ;
+        width: 150px;
+    }
+    main section.presentacion div.presentacion_quienSoy h2,
+    main section.presentacion div.presentacion_quienSoy h2 span,
+    main section.tecnologias h2,
+    main section.tecnologias h2 span{
+     font-size: 1.4rem;
+    }
+    main section.presentacion div.presentacion_quienSoy p{
+        font-size: 0.9rem;
+    }
+    main section.presentacion div.presentacion_quienSoy p span{
+        font-size: 1rem;
+    }
+    main section.tecnologias article picture{
+        width: 64px;
+        height: 64px;
+        filter: grayscale(50%);
+    }
+    main section.tecnologias article picture img{
+        width: 32px;
+    }
 }
 
 

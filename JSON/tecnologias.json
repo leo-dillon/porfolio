@@ -1,0 +1,45 @@
+{
+    "tecnologias": [
+        {
+            "name": "HTML",
+            "url": "./../IMG/iconos/html.png"
+        },
+        {
+            "name": "CSS",
+            "url": "./../IMG/iconos/css.png"
+        },
+        {
+            "name": "JavaScript",
+            "url": "./../IMG/iconos/js.png"
+        },
+        {
+            "name": "TypeScript",
+            "url": "./../IMG/iconos/typescript.png"
+        },
+        {
+            "name": "React",
+            "url": "./../IMG/iconos/react.png"
+        },
+        {
+            "name": "Astro",
+            "url": "./../IMG/iconos/astro.png"
+        },
+        {
+            "name": "Github",
+            "url": "./../IMG/iconos/github.png"
+        },
+        {
+            "name": "Git",
+            "url": "./../IMG/iconos/git.png"
+        },
+        {
+            "name": "Figma",
+            "url": "./../IMG/iconos/figma.png"
+        },
+        {
+            "name": "PhotoShop",
+            "url": "./../IMG/iconos/photoShop.png"
+        }
+
+    ]
+}
