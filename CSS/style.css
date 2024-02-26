@@ -120,7 +120,7 @@ header .nav_vertical{
 }
 main{
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     padding: 80px;
     display: flex;
@@ -459,14 +459,14 @@ main section.contacto{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 48px;
+    margin-top: 12px;
     width: 100%;
-    padding: 24px 15px;
+    padding: 12px;
     height: auto;
 }
 main section.contacto h2{
     width: max-content;
-    margin: 32px 0;
+    margin: 16px 0;
     padding: 0 16px;
     font-family: "Monserrat", monospace;
     font-weight: 700;
@@ -476,6 +476,17 @@ main section.contacto h2{
     border-bottom: 2px solid var(--color-green-100);
     text-wrap: balance;
     color: var(--color-white-90);
+}
+main section.contacto div.contenedor_contacto form{
+    position: relative;
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 12px;
+    border:  1px solid var(--color-green-60);
+    background-color: var(--color-black-70);
 }
 main section.contacto div.contenedor_contacto{
     display: flex;
@@ -489,8 +500,8 @@ main section.contacto div.contenedor_contacto{
 main section.contacto div.contenedor_contacto form div.redes{
     position: absolute;
     left: -78px;
-    top: 0;
-    bottom: 0;
+    top: 0px;
+    bottom: 0px;
     margin: auto 0;
     width: 78px;
     height: 60%;
@@ -521,16 +532,6 @@ main section.contacto div.contenedor_contacto form div.redes a img{
 }
 main section.contacto div.contenedor_contacto form div.redes a:hover img{
     filter: drop-shadow(0 0 6px var(--color-rosa-60))
-}
-main section.contacto div.contenedor_contacto form{
-    position: relative;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: 32px 24px;
-    border-radius: 12px;
-    border:  1px solid var(--color-green-60);
-    background-color: var(--color-black-70);
 }
 main section.contacto div.contenedor_contacto form label{
     position: relative;
@@ -576,14 +577,36 @@ main section.contacto div.contenedor_contacto form input[type='submit']{
     color: var(--color-white-100);
     font-size: 1.6rem;
     cursor: pointer;
+    transition: background-color .3s ease-out;
 }
-main section.contacto div.contenedor_contacto form input[type='submit']:hover{
+main section.contacto div.contenedor_contacto form input[type='submit']:hover,
+footer a:hover{
     background-color: var(--color-green-60);
 }
 
 main section.contacto div.contenedor_contacto form input::placeholder,
 main section.contacto div.contenedor_contacto form textarea::placeholder{
     color: var(--color-black-70);
+}
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 32px;
+    background-color: var(--color-black-100);
+}
+footer a{
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--color-green-60);
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-white-100);
+    transition: background-color .3s ease-out;
 }
 
 @media (width < 800px) {
@@ -718,10 +741,12 @@ main section.contacto div.contenedor_contacto form textarea::placeholder{
     main section.presentacion div.presentacion_quienSoy h2,
     main section.presentacion div.presentacion_quienSoy h2 span,
     main section.tecnologias h2,
-    main section.tecnologias h2 span{
+    main section.tecnologias h2 span,
+    main section.contacto h2{
      font-size: 1.4rem;
     }
-    main section.presentacion div.presentacion_quienSoy p{
+    main section.presentacion div.presentacion_quienSoy p,
+    main section.contacto div.contenedor_contacto form label{
         font-size: 0.9rem;
     }
     main section.presentacion div.presentacion_quienSoy p span{
@@ -735,6 +760,34 @@ main section.contacto div.contenedor_contacto form textarea::placeholder{
     main section.tecnologias article picture img{
         width: 32px;
     }
+    main section.contacto div.contenedor_contacto form{
+        margin-bottom: 100px;
+    }
+    main section.contacto div.contenedor_contacto form div.redes{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+        height: 78px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: initial;
+        bottom: -77px;
+        margin: 0 auto;
+        border-top: 2px solid var(--color-black-100);
+        border-right: 1px solid var(--color-green-60);
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+    footer{
+        gap: 18px;
+    }
+    footer a{
+        font-size: 1rem;
+    }
+
 }
 
 
